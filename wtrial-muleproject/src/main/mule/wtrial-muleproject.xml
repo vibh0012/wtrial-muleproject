@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6b3aca56-bb5e-4150-80b8-88bb941cd9f5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="wtrial-muleprojectFlow" doc:id="b66d4f44-9378-4142-a43d-91084018d77e" >
+		<http:listener doc:name="Listener" doc:id="6d597a6f-1926-4c95-88e0-47eb9bdf87b0" config-ref="HTTP_Listener_config" path="/wtrial"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1b06dbe7-7d74-4c3c-b3f1-af1ca2909aa7" message='#["This is test logger"]'/>
+	</flow>
+</mule>
